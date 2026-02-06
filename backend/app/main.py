@@ -7,7 +7,7 @@ app = FastAPI(title="HRMS Lite Backend")
 # CORS settings - allow frontend (Next.js) running on localhost:3000
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "https://your-frontend.vercel.app",
 ]
 
 app.add_middleware(
