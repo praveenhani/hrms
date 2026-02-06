@@ -1,0 +1,32 @@
+.paginationContainer {
+  width: 100%;
+}
+
+.MuiPaginationItem-root {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #333333;
+  font-weight: 500;
+}
+
+.MuiPaginationItem-root:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.MuiPaginationItem-root.Mui-selected {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #333333;
+}
+
+.MuiPaginationItem-root.Mui-selected:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.MuiPaginationItem-root.Mui-disabled {
+  background-color: #f5f5f5;
+  color: #999999;
+  border-color: #cccccc;
+}
