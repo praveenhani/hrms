@@ -4,14 +4,12 @@ from app.routes import employee, attendance
 
 app = FastAPI(title="HRMS Lite Backend")
 
-# CORS settings - allow frontend (Next.js) running on localhost:3000
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins= [
-    "https://hrms-jade-ten.vercel.app",
-],
-    allow_credentials=True,
+    allow_origins=[
+        "https://hrms-jade-ten.vercel.app"
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -19,7 +17,6 @@ app.add_middleware(
 app.include_router(employee.router)
 app.include_router(attendance.router)
 
-
 @app.get("/")
 def root():
-    return {"message": "HRMS Lite API is running"}   
+    return {"message": "HRMS Lite API is running"}
