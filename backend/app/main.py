@@ -5,14 +5,13 @@ from app.routes import employee, attendance
 app = FastAPI(title="HRMS Lite Backend")
 
 # CORS settings - allow frontend (Next.js) running on localhost:3000
-origins = [
-    "http://localhost:3000",
-    "https://your-frontend.vercel.app",
-]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins= [
+    "http://localhost:3000",
+    "https://your-frontend.vercel.app",
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
