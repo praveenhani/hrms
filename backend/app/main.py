@@ -5,16 +5,28 @@ from app.routes.attendance import router as attendance_router
 
 app = FastAPI(title="HRMS Lite Backend")
 
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=[
+#         "http://localhost:3000",
+#         "https://hrms-jade-ten.vercel.app",
+#     ],
+#     allow_credentials=False,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "https://hrms-jade-ten.vercel.app",
     ],
-    allow_credentials=False,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     allow_headers=["*"],
+    allow_credentials=False,
 )
+
 
 app.include_router(employee_router, prefix="/employees")
 app.include_router(attendance_router, prefix="/attendance")
