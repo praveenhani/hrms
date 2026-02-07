@@ -34,4 +34,7 @@ app.include_router(attendance_router, prefix="/attendance")
 
 @app.get("/")
 def root():
-    return {"message": "HRMS Lite API is running"}
+    return {
+        "message": "HRMS Lite API is running",
+        "cors_credentials": False
+    }
